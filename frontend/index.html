@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal de Proveedores - ERP</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- Login Page -->
+      <div id="login-page" class="page">
+        <div class="login-container">
+          <h1>Portal de Proveedores</h1>
+          <form id="login-form">
+            <div class="form-group">
+              <label for="proveedorId">ID de Proveedor</label>
+              <input type="text" id="proveedorId" name="proveedorId" required />
+            </div>
+            <div class="form-group">
+              <label for="password">Contraseña</label>
+              <input type="password" id="password" name="password" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+            <div id="login-error" class="error-message"></div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Dashboard Page -->
+      <div id="dashboard-page" class="page" style="display: none;">
+        <nav class="navbar">
+          <h1>Portal de Proveedores</h1>
+          <div class="navbar-info">
+            <span id="proveedor-info"></span>
+            <button id="logout-btn" class="btn btn-secondary">Cerrar Sesión</button>
+          </div>
+        </nav>
+
+        <div class="container">
+          <h2>Órdenes de Compra</h2>
+          
+          <div id="loading" class="loading">Cargando órdenes de compra...</div>
+          <div id="error-message" class="error-message"></div>
+          
+          <div id="ordenes-container" style="display: none;">
+            <table class="ordenes-table">
+              <thead>
+                <tr>
+                  <th>ID OC</th>
+                  <th>Fecha</th>
+                  <th>Subtotal</th>
+                  <th>IVA</th>
+                  <th>Total</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="ordenes-tbody">
+                <!-- Órdenes se cargarán aquí -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
